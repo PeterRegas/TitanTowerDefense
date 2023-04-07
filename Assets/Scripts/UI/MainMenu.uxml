@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
+    <ui:VisualElement name="Background" style="align-items: center; flex-grow: 1; justify-content: center;">
+        <ui:Label text="Game Title Here" display-tooltip-when-elided="true" style="font-size: 35px; position: absolute; top: 34px;" />
+        <ui:VisualElement style="height: 301px; width: 225px; align-items: center; justify-content: center;">
+            <ui:Label text="Main Menu" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 31px; position: absolute; top: 0; margin-bottom: 4px;" />
+            <ui:Button text="Start Game" display-tooltip-when-elided="true" name="StartButton" class="ButtonStyle" />
+            <ui:Button text="Select Level" display-tooltip-when-elided="true" name="SelectLevelButton" class="ButtonStyle" style="display: flex;" />
+            <ui:Button text="Load Game" display-tooltip-when-elided="true" name="LoadButton" class="ButtonStyle" />
+            <ui:Button text="Quit Game" display-tooltip-when-elided="true" name="QuitButton" class="ButtonStyle" style="display: flex; visibility: visible;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
