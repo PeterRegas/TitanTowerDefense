@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    int i = 0;
+    private int i = 0;
+    [SerializeField] int spawnRate;
     public GameObject enemy;
     [SerializeField] private Transform spawn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-
         i++;
         //spawn enemy
-        if(i>=200){
+        if(i>=spawnRate){
             //create the enemy      
             Instantiate(enemy, new Vector3(spawn.position.x, spawn.position.y, spawn.position.z), spawn.rotation);
             i=0;

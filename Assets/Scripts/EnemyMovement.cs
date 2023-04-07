@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class EnemyMovement : MonoBehaviour {
     [SerializeField] Transform[] waypoints;
     [SerializeField] float closeEnoughDistance;
+    [SerializeField] float speed;
     public NavMeshAgent agent = null;
     public Slider healthslide;
     public float distanceToTarget;
@@ -35,6 +36,7 @@ public class EnemyMovement : MonoBehaviour {
         }
         // navigate to the waypoint
         agent.SetDestination(waypoints[wayPointIndex].position);
+        agent.speed = speed;
         //animator.SetFloat("Forward", agent.velocity.magnitude);
     }
     void OnTriggerEnter(Collider thing)
