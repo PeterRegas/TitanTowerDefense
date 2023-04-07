@@ -25,13 +25,6 @@ public class EnemySpawn : MonoBehaviour
             i=0;
         }
     }
-    void OnTriggerEnter(Collider thing)
-    {
-        if(thing.tag == "Exit"){
-            //thing.GetComponent<enemy>().Hit(damage);
-            Destroy(gameObject);
-        }
-        
-    }
+
 }
 
