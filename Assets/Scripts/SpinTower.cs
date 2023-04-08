@@ -15,40 +15,36 @@ public class SpinTower : MonoBehaviour
     [SerializeField] GameObject bullet;
     private int j = 0;
     private GameObject target;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void FixedUpdate(){
+        if(GameObject.FindGameObjectsWithTag("enemy") != null){
+            enemies = GameObject.FindGameObjectsWithTag("enemy");
+            foreach(GameObject i in enemies){
+                distance = Vector3.Distance(i.GetComponent<Transform>().position, transform.position);
+                if(distance<range){
+                    if(target == null){
+                        target = i;
+                    }
+                    if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
+                        target = i;
+                    }
+                }
+            }
+            if(target != null){
+                distance = Vector3.Distance(target.GetComponent<Transform>().position, transform.position);
+                if(distance<=range){
+                    Vector3 targetDirection = (target.transform.position - gun.position).normalized;
+                    if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
+                        gun.Rotate(0,1f,0);
+                        j++;
+                        
+                        if(j >= fireRate){
+                            j=0;
+                            shoot();
+                        }
+                    }
+                }
+            }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
-        
-        foreach(GameObject i in enemies){
-            distance = Vector3.Distance(i.GetComponent<Transform>().position, transform.position);
-            if(distance<range){
-                if(target == null){
-                    target = i;
-                }
-                if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
-                    target = i;
-                }
-            }
-        }
-        distance = Vector3.Distance(target.GetComponent<Transform>().position, transform.position);
-        if(distance<=range){
-            Vector3 targetDirection = (target.transform.position - gun.position).normalized;
-            if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
-                gun.Rotate(0,1f,0);
-                j++;
-                
-                if(j >= fireRate){
-                    j=0;
-                    shoot();
-                }
-            }
         }
         
     }

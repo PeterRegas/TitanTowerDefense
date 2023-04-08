@@ -500,8 +500,10 @@ MonoBehaviour:
   - {fileID: 7526545943257767972, guid: e2fdfd3b42e46fb47aafed4076c8855f, type: 3}
   closeEnoughDistance: 2
   speed: 10
+  player: {fileID: 0}
   agent: {fileID: 6397164204765871327}
   healthslide: {fileID: 7692497424357895973}
+  healthslideCanvas: {fileID: 6016568907473409368}
   distanceToTarget: 0
   health: 100
   MaxHealth: 100
