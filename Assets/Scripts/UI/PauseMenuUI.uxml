@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(101, 101, 101, 0.43); display: flex;">
+        <ui:VisualElement style="height: 303px; width: 275px; align-items: center; justify-content: center; position: relative; background-color: rgba(255, 255, 255, 0); -unity-text-align: upper-center; visibility: visible; display: flex; overflow: visible;">
+            <ui:Label text="Paused" display-tooltip-when-elided="true" name="PausedLabel" style="font-size: 32px; position: absolute; top: 5px;" />
+            <ui:Button text="Resume" display-tooltip-when-elided="true" name="ResumeButton" class="ButtonStyle" />
+            <ui:Button text="Save" display-tooltip-when-elided="true" name="SaveButton" class="ButtonStyle" />
+            <ui:Button text="Quit Game" display-tooltip-when-elided="true" name="QuitButton" class="ButtonStyle" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
