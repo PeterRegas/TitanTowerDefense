@@ -14,11 +14,12 @@ public class PauseMenuController : MonoBehaviour
 
     [SerializeField] private BuyMenuController buyMenuController;
 
+    private SaveManager saveManager;
+
     // Start is called before the first frame update
     void Awake()
     {
-        
-        
+        saveManager = FindObjectOfType<SaveManager>();
         var root = pauseMenuDocument.rootVisualElement;
 
         resumeButton = root.Q<Button>("ResumeButton");
@@ -48,6 +49,7 @@ public class PauseMenuController : MonoBehaviour
     }
     public void pause()
     {
+        saveButton.text = "Save";
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         background.style.display = DisplayStyle.Flex;
         Time.timeScale = 0f;
@@ -72,13 +74,14 @@ public class PauseMenuController : MonoBehaviour
     
     void quitButtonPressed(ClickEvent click)
     {
-        Debug.Log("quit");
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        isPaused = false;
     }
     void saveButtonPressed(ClickEvent click)
     {
-        //saveManager.loadPlayerStats();
-        //SceneManager.LoadScene("TophatSurvivor");
-        
+        saveManager.saveGameStats();
+        saveButton.text = "Saved!";
+
     }
 }
