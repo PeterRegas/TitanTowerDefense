@@ -4,21 +4,23 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+//Place in player as component
 public class BuyMenuController : MonoBehaviour
 {
     // Start is called before the first frame update
 
     [SerializeField] UIDocument buyMenuDocument;
-    public Button buy1Button;
+    public Button buy1Button, buy2Button;
     private VisualElement background, showToBuy;
 
     private bool inRange = false;
     public bool menuOpen = false;
-    [SerializeField] GameObject tower;
+    [SerializeField] GameObject[] towers;
     private Transform towerSpawnTransform;
     void Start()
     {
         Debug.Log(menuOpen);
+        
         var root = buyMenuDocument.rootVisualElement;
         background = root.Q<VisualElement>("Background");
         background.style.display = DisplayStyle.None;
@@ -27,6 +29,8 @@ public class BuyMenuController : MonoBehaviour
 
         buy1Button = root.Q<Button>("Tower1Button");
         buy1Button.RegisterCallback<ClickEvent>(buy1ButtonPressed);
+        buy2Button = root.Q<Button>("Tower2Button");
+        buy2Button.RegisterCallback<ClickEvent>(buy2ButtonPressed);
 
     }
 
@@ -70,14 +74,20 @@ public class BuyMenuController : MonoBehaviour
 
     private void buy1ButtonPressed(ClickEvent click)
     {
-        
         Debug.Log("Tower 1 Button Pressed");
         Debug.Log("Tower Spawned");
         Debug.Log(towerSpawnTransform.position);
-        makeTower(tower);
-        
-
+        makeTower(towers[0]);
     }
+
+    private void buy2ButtonPressed(ClickEvent click)
+    {
+        Debug.Log("Tower 2 Button Pressed");
+        Debug.Log("Tower Spawned");
+        Debug.Log(towerSpawnTransform.position);
+        makeTower(towers[1]);
+    }
+
 
     private void makeTower(GameObject tower){
         menuOpen = false;

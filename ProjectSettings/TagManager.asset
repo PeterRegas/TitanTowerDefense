@@ -9,6 +9,7 @@ TagManager:
   - Enter
   - enemy
   - emptyTower
+  - Tower
   layers:
   - Default
   - TransparentFX
