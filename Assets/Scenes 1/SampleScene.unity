@@ -2110,16 +2110,6 @@ MonoBehaviour:
   towers:
   - {fileID: 1720726972743136351, guid: 268cf8ff2bb060f47aac8ab95c2c2d8d, type: 3}
   - {fileID: 5516506488763438349, guid: 649f2367c2e1aee43aba34561c924316, type: 3}
-  spawnRate: 20
-  enemy:
-  - {fileID: 1127075712887121243, guid: c953c48b83fd20e46a30882f186061c1, type: 3}
-  - {fileID: 8385225308572459738, guid: ee310333ead0588419bc4481dee64e13, type: 3}
-  spawn:
-  - {fileID: 1954019765}
-  - {fileID: 578420936}
-  round: 1
-  totalEnemies: 0
-  startRound: 0
 --- !u!1 &769602516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3160,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039838261}
-  - component: {fileID: 1039838260}
   - component: {fileID: 1039838259}
   m_Layer: 0
   m_Name: EnemySpawners
@@ -3191,24 +3180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701f20210db62ba40995dbe1418ed895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 300
-  enemy: {fileID: 8385225308572459738, guid: ee310333ead0588419bc4481dee64e13, type: 3}
-  spawn: {fileID: 578420936}
---- !u!114 &1039838260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039838258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 701f20210db62ba40995dbe1418ed895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnRate: 100
-  enemy: {fileID: 1127075712887121243, guid: c953c48b83fd20e46a30882f186061c1, type: 3}
-  spawn: {fileID: 1954019765}
+  spawnRate: 25
+  enemy:
+  - {fileID: 1127075712887121243, guid: c953c48b83fd20e46a30882f186061c1, type: 3}
+  - {fileID: 8385225308572459738, guid: ee310333ead0588419bc4481dee64e13, type: 3}
+  spawn:
+  - {fileID: 1954019765}
+  - {fileID: 578420936}
+  round: 1
+  totalEnemies: 0
+  startRound: 0
 --- !u!4 &1039838261
 Transform:
   m_ObjectHideFlags: 0
