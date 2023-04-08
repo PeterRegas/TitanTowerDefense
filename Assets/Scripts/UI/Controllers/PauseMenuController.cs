@@ -11,6 +11,8 @@ public class PauseMenuController : MonoBehaviour
     public Button resumeButton, saveButton, quitButton;
     private VisualElement background;
     private bool isPaused = false;
+
+    [SerializeField] private FirstPersonPlayer firstPersonScript;
     
 
     // Start is called before the first frame update
@@ -41,11 +43,13 @@ public class PauseMenuController : MonoBehaviour
         else if (Input.GetButtonDown("Cancel") && isPaused == true)
         {
             resume();
+            Debug.Log("resume");
             
         }
     }
     public void pause()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
         background.style.display = DisplayStyle.Flex;
         Time.timeScale = 0f;
         isPaused = true;
@@ -53,6 +57,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void resume()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         background.style.display = DisplayStyle.None;
         Time.timeScale = 1f;
         isPaused = false;
