@@ -12,7 +12,6 @@ public class PauseMenuController : MonoBehaviour
     private VisualElement background;
     private bool isPaused = false;
 
-    [SerializeField] private FirstPersonPlayer firstPersonScript;
     
 
     // Start is called before the first frame update
