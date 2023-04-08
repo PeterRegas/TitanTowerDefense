@@ -12,7 +12,7 @@ public class PauseMenuController : MonoBehaviour
     private VisualElement background;
     private bool isPaused = false;
 
-    
+    [SerializeField] private BuyMenuController buyMenuController;
 
     // Start is called before the first frame update
     void Awake()
@@ -33,13 +33,13 @@ public class PauseMenuController : MonoBehaviour
 
      private void Update()
     {
-        if (Input.GetButtonDown("Cancel") && isPaused == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false && !buyMenuController.menuOpen )
         {
             pause();
             Debug.Log("pause");
             
         }
-        else if (Input.GetButtonDown("Cancel") && isPaused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
         {
             resume();
             Debug.Log("resume");
