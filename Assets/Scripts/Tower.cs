@@ -25,36 +25,41 @@ public class Tower : MonoBehaviour
     void FixedUpdate()
     {
         enemies = GameObject.FindGameObjectsWithTag("enemy");
-        
-        foreach(GameObject i in enemies){
-            distance = Vector3.Distance(i.GetComponent<Transform>().position, transform.position);
-            if(distance<range){
-                if(target == null){
-                    target = i;
-                }
-                if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
-                    target = i;
-                }
-            }
-        }
-        distance = Vector3.Distance(target.GetComponent<Transform>().position, transform.position);
-        if(distance<=range){
-            Vector3 targetDirection = (target.transform.position - gun.position).normalized;
-            if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
-                gun.LookAt(target.GetComponent<Transform>().position);
-                j++;
-                
-                if(j >= fireRate){
-                    j=0;
-                    shoot();
+        if(enemies!=null){
+            foreach(GameObject i in enemies){
+                distance = Vector3.Distance(i.GetComponent<Transform>().position, transform.position);
+                if(distance<=range){
+                    if(target == null){
+                        target = i;
+                    }
+                    if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
+                        target = i;
+                    }
                 }
             }
+            if(target!=null){
+                distance = Vector3.Distance(target.GetComponent<Transform>().position, transform.position);
+                if(distance<=range){
+                    Vector3 targetDirection = (target.transform.position - gun.position).normalized;
+                    if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
+                        gun.LookAt(target.GetComponent<Transform>().position);
+                        gun.transform.Rotate(0,0.1f,0);
+                        j++;
+                        
+                        if(j >= fireRate){
+                            j=0;
+                            shoot();
+                        }
+                    }
+                }
+            }
+
         }
+
         
     }
     void shoot(){
         GameObject bulletClone = Instantiate(bullet, barrel.position, transform.rotation);
-        Debug.Log(gun.transform.forward);
         
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
