@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 50
-  shotSpeed: 10000
+  shotSpeed: 15000
   fireRate: 50
   gun: {fileID: 1720726974163861852}
   barrel: {fileID: 1720726974362424108}

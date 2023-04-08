@@ -43,7 +43,7 @@ public class Tower : MonoBehaviour
                     Vector3 targetDirection = (target.transform.position - gun.position).normalized;
                     if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
                         gun.LookAt(target.GetComponent<Transform>().position);
-                        gun.transform.Rotate(0.5f,0.5f,0);
+                        gun.transform.Rotate(1f,1f,1f);
                         j++;
                         
                         if(j >= fireRate){
