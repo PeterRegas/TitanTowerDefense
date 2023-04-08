@@ -2110,6 +2110,16 @@ MonoBehaviour:
   towers:
   - {fileID: 1720726972743136351, guid: 268cf8ff2bb060f47aac8ab95c2c2d8d, type: 3}
   - {fileID: 5516506488763438349, guid: 649f2367c2e1aee43aba34561c924316, type: 3}
+  spawnRate: 20
+  enemy:
+  - {fileID: 1127075712887121243, guid: c953c48b83fd20e46a30882f186061c1, type: 3}
+  - {fileID: 8385225308572459738, guid: ee310333ead0588419bc4481dee64e13, type: 3}
+  spawn:
+  - {fileID: 1954019765}
+  - {fileID: 578420936}
+  round: 1
+  totalEnemies: 0
+  startRound: 0
 --- !u!1 &769602516
 GameObject:
   m_ObjectHideFlags: 0

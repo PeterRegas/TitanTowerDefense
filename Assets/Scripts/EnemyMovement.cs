@@ -6,8 +6,10 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] Transform[] waypoints;
     [SerializeField] float closeEnoughDistance;
     [SerializeField] float speed;
+    [SerializeField] Transform player;
     public NavMeshAgent agent = null;
     public Slider healthslide;
+    public Canvas healthslideCanvas;
     public float distanceToTarget;
     public float health = 100f;
     public float MaxHealth=100f;
@@ -18,6 +20,7 @@ public class EnemyMovement : MonoBehaviour {
         if (wayPointIndex==0) {
             wayPointIndex++;
         }
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void FixedUpdate() {
@@ -46,6 +49,9 @@ public class EnemyMovement : MonoBehaviour {
             Destroy(gameObject);
         }
         
+    }
+    void Update(){
+        healthslideCanvas.GetComponent<Transform>().transform.LookAt(player);
     }
     
 }
