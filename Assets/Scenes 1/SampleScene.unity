@@ -1146,7 +1146,6 @@ GameObject:
   m_Component:
   - component: {fileID: 501592782}
   - component: {fileID: 501592784}
-  - component: {fileID: 501592783}
   m_Layer: 5
   m_Name: BuyMenu
   m_TagString: Untagged
@@ -1169,19 +1168,6 @@ Transform:
   m_Father: {fileID: 1725610312}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &501592783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501592781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313d25b118e93f546a92f6924ffa3179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuDocument: {fileID: 501592784}
 --- !u!114 &501592784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,7 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 1274efbbad376c94a87537ec8af521e6, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: c74e6ae3dd7fce240a496e5491c54f5c, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: f640bc54ae783e74f901899ea152cb8d, type: 3}
   m_SortingOrder: 1
 --- !u!1 &513131896
 GameObject:
@@ -2006,6 +1992,7 @@ GameObject:
   - component: {fileID: 765376653}
   - component: {fileID: 765376654}
   - component: {fileID: 765376655}
+  - component: {fileID: 765376656}
   m_Layer: 6
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -2105,6 +2092,20 @@ MonoBehaviour:
   jumpSpeed: 7
   mouseSensitivity: 1000
   camera: {fileID: 963194228}
+--- !u!114 &765376656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765376649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7954f6f9faea23343816270632233be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyMenuDocument: {fileID: 501592784}
+  tower: {fileID: 1720726972743136351, guid: 268cf8ff2bb060f47aac8ab95c2c2d8d, type: 3}
 --- !u!1 &769602516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,27 +5701,13 @@ GameObject:
   - component: {fileID: 1985867728}
   - component: {fileID: 1985867727}
   - component: {fileID: 1985867726}
-  - component: {fileID: 1985867725}
   m_Layer: 0
   m_Name: spawntower
-  m_TagString: Untagged
+  m_TagString: emptyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1985867725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985867724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176cdb34b8b0ef6448c9ad93576d4352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 1720726972743136351, guid: 268cf8ff2bb060f47aac8ab95c2c2d8d, type: 3}
 --- !u!136 &1985867726
 CapsuleCollider:
   m_ObjectHideFlags: 0

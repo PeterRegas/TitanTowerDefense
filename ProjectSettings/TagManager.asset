@@ -8,6 +8,7 @@ TagManager:
   - Exit
   - Enter
   - enemy
+  - emptyTower
   layers:
   - Default
   - TransparentFX
