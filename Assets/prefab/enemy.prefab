@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1127075712887121243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.023019075, y: 5.407565, z: -49.245003}
-  m_LocalScale: {x: 1.63, y: 1, z: 1.61}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4870516995819207570}
@@ -117,7 +117,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 7403964692699496062, guid: ab2c24e406b8bbd4bb3153b0bf76259b, type: 3}
-  - {fileID: 7526545943257767972, guid: e2fdfd3b42e46fb47aafed4076c8855f, type: 3}
+  - {fileID: 4097112286543360764, guid: f4978f4a069c0944688a6b925f4ff78c, type: 3}
+  - {fileID: 1272817867851648789, guid: b76d6fade06d01f4bacbed05fd7c3f27, type: 3}
+  - {fileID: 5790517025587567472, guid: 7ffeaea590e29de4390cdfbb8f7b1211, type: 3}
+  - {fileID: 7010649244479755145, guid: 9ba4c8a36f3f2224b9bbbc07537a6942, type: 3}
+  - {fileID: 5837011392098347045, guid: e1379b93944030a49b537355854216bd, type: 3}
+  - {fileID: 2225967539894044040, guid: 24b87524fbcc64244b598fb16bf17748, type: 3}
+  - {fileID: 3372480690899319740, guid: d8c283a21c2ef91499f4eaed79294e38, type: 3}
+  - {fileID: 4721987629712629621, guid: 17779e5406e9a2c4aa1ba86ef5a705ae, type: 3}
+  - {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
   closeEnoughDistance: 2
   speed: 5
   player: {fileID: 0}
