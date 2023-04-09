@@ -4339,6 +4339,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -4387,7 +4391,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
 --- !u!1 &374432007 stripped
 GameObject:
@@ -7526,6 +7531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -7570,11 +7579,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7783003541326011114, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8227905951378884694, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
 --- !u!1 &663274857 stripped
 GameObject:
@@ -13605,6 +13619,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -13649,11 +13667,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7783003541326011114, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8227905951378884694, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_Name
       value: Tower (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
 --- !u!1001 &1242141322
 PrefabInstance:
@@ -15093,32 +15116,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8194536740460653061, guid: 85f957c51e1b2824cbfe5e97ef39ebed, type: 3}
---- !u!1 &1351372544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
-  m_PrefabInstance: {fileID: 6168108658424156158}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1351372546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351372544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd465a6659af58147966821d28349628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 20
-  shotSpeed: 20000
-  fireRate: 10
-  gun: {fileID: 485362593}
-  barrel: {fileID: 1317979481}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  bullet: {fileID: 3622656129384537535, guid: a7df07e4ed307dc4ab5f5c17391d5bfe, type: 3}
 --- !u!1 &1351566726 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8382473099375456703, guid: ce564ee9aabfa874396c65d5187aca3b, type: 3}
@@ -21365,6 +21362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -21413,7 +21414,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
 --- !u!1 &1937227266
 GameObject:
@@ -21600,6 +21602,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -21648,7 +21654,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
 --- !u!1 &1961844085
 GameObject:
@@ -23749,11 +23756,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 134388826363684622, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.4
+      value: 42.72
       objectReference: {fileID: 0}
     - target: {fileID: 134388826363684622, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_LocalPosition.z
       value: -45.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: emptyTower
       objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
@@ -23802,6 +23813,10 @@ PrefabInstance:
     - target: {fileID: 8227905951378884694, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227905951378884694, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
