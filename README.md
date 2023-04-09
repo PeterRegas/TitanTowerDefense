@@ -53,12 +53,12 @@ The objective evaluation, which amounts to `22/40` of the marks, will account fo
 
 Finally, `5 marks` will be allocated to the independent learning of a new game development concept, and the creation of a short (e.g. 3-5 slides) presentation file describing how to use it and where to get more information.  You will not be required to present your work, but you will need to incorporate what you've learned into your game.
 
-- `4.0 marks` - Environment creation
+- `4.0 marks` - Environment creation ✓ 
 - `4.0 marks` - Character animation (via MechAnim)
-- `3.0 marks` - Physics/collision system
-- `2.0 marks` - Enemies and enemy AI
-- `1.0 marks` - Game state loading/saving
-- `1.0 marks` - Menus and HUD
+- `3.0 marks` - Physics/collision system ✓
+- `2.0 marks` - Enemies and enemy AI ✓
+- `1.0 marks` - Game state loading/saving ✓
+- `1.0 marks` - Menus and HUD ✓
 - `3.0 marks` - Trailer video
 - `5.0 marks` - Implementation of at least one additional concept, and slides describing one of these concepts
 
