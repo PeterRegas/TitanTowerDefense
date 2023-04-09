@@ -53,7 +53,10 @@ public class MainMenuController : MonoBehaviour
     void loadButtonPressed(ClickEvent click)
     {
         saveManager.loadGameStats();
-        SceneManager.LoadScene(saveManager.saveStats.levelName);
-        
+        if (saveManager.saveStats != null){
+            SceneManager.LoadScene(saveManager.saveStats.levelName);
+        }else{
+            loadButton.text = "No Save Found";
+        }
     }
 }
