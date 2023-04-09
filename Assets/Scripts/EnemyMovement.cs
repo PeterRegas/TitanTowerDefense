@@ -15,6 +15,8 @@ public class EnemyMovement : MonoBehaviour {
     public float MaxHealth=100f;
     //[SerializeField] Animator animator = null;
     public int wayPointIndex = 0;
+
+    [SerializeField] private Animator animator;
     
     private void Start() {
         if (wayPointIndex==0) {
@@ -27,7 +29,10 @@ public class EnemyMovement : MonoBehaviour {
 
         healthslide.value = health/MaxHealth;
         if(health<=0){
-            Destroy(gameObject);
+            agent.speed = 0;
+            animator.SetTrigger("dying");
+            
+            Destroy(gameObject, 3.5f);
             return;
 
         }
@@ -40,11 +45,12 @@ public class EnemyMovement : MonoBehaviour {
         // navigate to the waypoint
         agent.SetDestination(waypoints[wayPointIndex].position);
         agent.speed = speed;
-        //animator.SetFloat("Forward", agent.velocity.magnitude);
+        animator.SetFloat("speed", agent.speed);
     }
     void OnTriggerEnter(Collider thing)
     {
         if(thing.tag == "Exit"){
+            Debug.Log("Exit");
             //thing.GetComponent<enemy>().Hit(damage);
             Destroy(gameObject);
         }
@@ -53,5 +59,6 @@ public class EnemyMovement : MonoBehaviour {
     void Update(){
         healthslideCanvas.GetComponent<Transform>().transform.LookAt(player);
     }
+    
     
 }
