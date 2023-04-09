@@ -15093,6 +15093,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8194536740460653061, guid: 85f957c51e1b2824cbfe5e97ef39ebed, type: 3}
+--- !u!1 &1351372544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 762974484939423156, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+  m_PrefabInstance: {fileID: 6168108658424156158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351372546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351372544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd465a6659af58147966821d28349628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 20
+  shotSpeed: 20000
+  fireRate: 10
+  gun: {fileID: 485362593}
+  barrel: {fileID: 1317979481}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  bullet: {fileID: 3622656129384537535, guid: a7df07e4ed307dc4ab5f5c17391d5bfe, type: 3}
 --- !u!1 &1351566726 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8382473099375456703, guid: ce564ee9aabfa874396c65d5187aca3b, type: 3}
@@ -23633,8 +23659,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -486.94
+      value: -484.25
       objectReference: {fileID: 0}
     - target: {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23709,6 +23743,18 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 134388826363684622, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 134388826363684622, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 134388826363684622, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7195240715499576765, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -23757,5 +23803,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 128073242597685753, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1bfcadc9f814cf46833abd18ebc168a, type: 3}
