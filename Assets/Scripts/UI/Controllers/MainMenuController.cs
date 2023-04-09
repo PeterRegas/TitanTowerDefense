@@ -38,7 +38,7 @@ public class MainMenuController : MonoBehaviour
        // saveManager.playerStats = newSave;
         Debug.Log("Start Pressed");
         saveManager.saveStats = new SaveState();
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level 1");
     }
     void selectButtonPressed(ClickEvent click)
     {
