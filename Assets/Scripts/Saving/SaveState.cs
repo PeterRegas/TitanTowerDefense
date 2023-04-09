@@ -28,13 +28,17 @@ public class SaveState
         towerListRot = new List<Quaternion>();
     }
     
-    // public SaveState(int roundNum, int creditNum, Vector3 [] towerListPos, Quaternion [] towerListRot)
-    // {
-    //     // this.health = health;
-    //     // this.score = score;
-    //     // this.level = level;
-    //     // this.experience = experience;
-    // }
+    //SaveState Constructor
+    public SaveState(int roundNum, int creditNum, string levelName, GameObject [] towerList, List<int> towerTypeList, List<Vector3> towerListPos, List<Quaternion> towerListRot)
+    {
+        this.roundNum = roundNum;
+        this.creditNum = creditNum;
+        this.levelName = levelName;
+        this.towerList = towerList;
+        this.towerTypeList = towerTypeList;
+        this.towerListPos = towerListPos;
+        this.towerListRot = towerListRot;
+    }
 
     
 
