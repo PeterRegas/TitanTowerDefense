@@ -9,14 +9,14 @@ public class MainMenuController : MonoBehaviour
 
     UIDocument mainMenuDoccument;
     public Button startButton, selectButton, quitButton, loadButton;
-    
+    private SaveManager saveManager;
     public bool isLoad = false;
     
 
     // Start is called before the first frame update
     void Awake()
     {
-        
+        saveManager = FindObjectOfType<SaveManager>();
         mainMenuDoccument = GetComponent<UIDocument>();
         var root = mainMenuDoccument.rootVisualElement;
 
@@ -37,6 +37,7 @@ public class MainMenuController : MonoBehaviour
        // Debug.Log(newSave.health);
        // saveManager.playerStats = newSave;
         Debug.Log("Start Pressed");
+        saveManager.saveStats = new SaveState();
         SceneManager.LoadScene("SampleScene");
     }
     void selectButtonPressed(ClickEvent click)
@@ -51,8 +52,11 @@ public class MainMenuController : MonoBehaviour
     }
     void loadButtonPressed(ClickEvent click)
     {
-        //saveManager.loadPlayerStats();
-        //SceneManager.LoadScene("TophatSurvivor");
-        
+        saveManager.loadGameStats();
+        if (saveManager.saveStats != null){
+            SceneManager.LoadScene(saveManager.saveStats.levelName);
+        }else{
+            loadButton.text = "No Save Found";
+        }
     }
 }
