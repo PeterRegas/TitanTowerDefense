@@ -2108,8 +2108,9 @@ MonoBehaviour:
   - {fileID: 3372480690899319740, guid: d8c283a21c2ef91499f4eaed79294e38, type: 3}
   - {fileID: 4721987629712629621, guid: 17779e5406e9a2c4aa1ba86ef5a705ae, type: 3}
   - {fileID: 5139227084794891369, guid: 88bfeb481145c4b4a8840b84c3a6a920, type: 3}
-  closeEnoughDistance: 4
+  closeEnoughDistance: 3
   speed: 7
+  levelcontrol: {fileID: 0}
   player: {fileID: 0}
   agent: {fileID: 6020002890786682432}
   healthslide: {fileID: 6020002891383869814}
@@ -2133,7 +2134,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!1 &7014989669302491002
 GameObject:

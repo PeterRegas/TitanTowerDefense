@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd465a6659af58147966821d28349628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 50
+  range: 20
   shotSpeed: 15000
   fireRate: 50
   gun: {fileID: 1720726974163861852}
@@ -121,6 +121,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bullet: {fileID: 3622656129384537535, guid: a7df07e4ed307dc4ab5f5c17391d5bfe, type: 3}
+  towerLevel: 1
+  damage: 25
 --- !u!1 &1720726974163861853
 GameObject:
   m_ObjectHideFlags: 0

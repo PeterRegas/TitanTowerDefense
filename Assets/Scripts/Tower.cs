@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour
     private GameObject target;
     public int towerLevel = 1;
     private float newfireRate;
-    private float damage;
+    public float damage;
 
     // Update is called once per frame
     void FixedUpdate()

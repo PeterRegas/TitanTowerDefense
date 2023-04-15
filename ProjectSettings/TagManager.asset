@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - emptyTower
   - Tower
+  - levelcontrol
   layers:
   - Default
   - TransparentFX
