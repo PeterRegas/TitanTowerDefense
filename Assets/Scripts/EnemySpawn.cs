@@ -37,6 +37,7 @@ public class EnemySpawn : MonoBehaviour
         else{
             if(startRound){
                 round++;
+                GetComponent<LevelControls>().Money+=10;
                 k=0;
             }
         }
