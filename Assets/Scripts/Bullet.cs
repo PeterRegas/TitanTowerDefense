@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject levelcontrol;
-    public int damage;
+    public float damage;
     private void Start() {
         levelcontrol = GameObject.FindGameObjectWithTag("levelcontrol");
     }

@@ -15,15 +15,14 @@ public class Tower : MonoBehaviour
     [SerializeField] GameObject bullet;
     private int j = 0;
     private GameObject target;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int towerLevel = 1;
+    private float newfireRate;
+    private float damage;
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        newfireRate = fireRate - towerLevel*1.5f;
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         if(enemies!=null){
             foreach(GameObject i in enemies){
@@ -46,7 +45,7 @@ public class Tower : MonoBehaviour
                         gun.transform.Rotate(1f,1f,1f);
                         j++;
                         
-                        if(j >= fireRate){
+                        if(j >= newfireRate){
                             j=0;
                             shoot();
                         }
@@ -60,7 +59,7 @@ public class Tower : MonoBehaviour
     }
     void shoot(){
         GameObject bulletClone = Instantiate(bullet, barrel.position, transform.rotation);
-        
+        bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*2);
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
     }
