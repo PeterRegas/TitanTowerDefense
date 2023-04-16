@@ -7,9 +7,11 @@ public class SaveLoader : MonoBehaviour
     // Start is called before the first frame update
     private SaveState saveStats;
     private SaveManager saveManager;
+    
 
     void Start()
     {
+        
         saveManager = FindObjectOfType<SaveManager>();
         saveStats = saveManager.saveStats;
         if(saveStats.towerList != null){
