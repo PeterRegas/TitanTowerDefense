@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/HUDLabelStyle.uss?fileID=7433441132597879392&amp;guid=2d669185cf1333146917cc0c7a7ddf56&amp;type=3#HUDLabelStyle" />
+    <ui:VisualElement name="Background" style="flex-grow: 1;">
+        <ui:VisualElement name="TopRight" style="height: 70px; width: 272px; position: absolute; right: 15px; top: 15px; -unity-font: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ.otf?fileID=12800000&amp;guid=bd25d7526f1d9c54490ee7920c9d76ac&amp;type=3#Blomberg-8MKKZ&apos;); color: rgb(207, 175, 54);">
+            <ui:Label text="Round: 100 " display-tooltip-when-elided="true" name="RoundLabel" enable-rich-text="true" class="HudLabels" style="font-size: 40px; -unity-text-align: upper-right; height: 50px; width: 267px; -unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); -unity-text-outline-width: 0.5px; -unity-text-outline-color: rgba(0, 0, 0, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="TopLeft" style="height: 70px; width: 272px; position: absolute; right: auto; top: 15px; -unity-font: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ.otf?fileID=12800000&amp;guid=bd25d7526f1d9c54490ee7920c9d76ac&amp;type=3#Blomberg-8MKKZ&apos;); left: 15px;">
+            <ui:Label text="Lives: 100 " display-tooltip-when-elided="true" name="HealthLabel" enable-rich-text="true" class="HudLabels" style="font-size: 40px; -unity-text-align: upper-left; height: 50px; width: 251px; -unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); color: rgb(236, 195, 48); -unity-text-outline-width: 0.5px; -unity-text-outline-color: rgba(0, 0, 0, 255);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomLeft" style="height: 70px; width: 272px; position: absolute; right: 15px; top: auto; -unity-font: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ.otf?fileID=12800000&amp;guid=bd25d7526f1d9c54490ee7920c9d76ac&amp;type=3#Blomberg-8MKKZ&apos;); left: auto; bottom: 14px;">
+            <ui:Label text="Credits: 100 " display-tooltip-when-elided="true" name="CreditsLabel" enable-rich-text="true" class="HudLabels" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

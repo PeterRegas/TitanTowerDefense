@@ -21,7 +21,7 @@ public class SaveState
     public SaveState()
     {
         roundNum = 1;
-        livesNum = 100;
+        livesNum = 1;
         creditNum = 0;
         towerList = null;
         levelName = "";

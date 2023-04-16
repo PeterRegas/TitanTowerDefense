@@ -38,7 +38,7 @@
     border-top-width: -88px;
     border-bottom-width: -88px;
     margin-top: 6px;
-    background-color: rgba(156, 82, 82, 255);
+    background-color: rgb(185, 97, 97);
 }
 
 .ButtonStyle:active {

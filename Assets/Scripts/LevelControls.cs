@@ -22,7 +22,7 @@ public class LevelControls : MonoBehaviour
     void Update()
     {
         roundNum = GetComponent<EnemySpawn>().round;
-        //Debug.Log(roundNum);
+        
     }
 
 }
