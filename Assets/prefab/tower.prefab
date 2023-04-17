@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1720726972743136344}
   - component: {fileID: 1720726972743136345}
   - component: {fileID: 1720726972743136350}
+  - component: {fileID: 420225240390115318}
   m_Layer: 0
   m_Name: tower
   m_TagString: Tower
@@ -123,6 +124,19 @@ MonoBehaviour:
   bullet: {fileID: 3622656129384537535, guid: a7df07e4ed307dc4ab5f5c17391d5bfe, type: 3}
   towerLevel: 1
   damage: 25
+--- !u!65 &420225240390115318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720726972743136351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 5, z: 3.5}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1720726974163861853
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,9 +20,9 @@ public class SaveState
     
     public SaveState()
     {
-        roundNum = 1;
+        roundNum = 3;
         livesNum = 100;
-        creditNum = 0;
+        creditNum = 1000;
         towerList = null;
         levelName = "";
         towerTypeList = new List<int>();

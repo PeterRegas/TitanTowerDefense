@@ -14,11 +14,11 @@ public class BuyMenuController : MonoBehaviour
     private VisualElement background, showToBuy;
     private LevelControls levelControls;
 
-    private bool inRange = false;
+    private bool emptyInRange = false, towerInRange = false;
     public bool menuOpen = false;
     [SerializeField] GameObject[] towers;
     private Transform towerSpawnTransform;
-
+    private GameObject tempTowerToDelete;
     private Label tooBrokeLabel;
     void Start()
     {
@@ -42,7 +42,7 @@ public class BuyMenuController : MonoBehaviour
 
      private void Update() {
         //If the player presses the F key and is in range of the tower, the menu will open
-        if(Input.GetKeyDown(KeyCode.F) && inRange){
+        if(Input.GetKeyDown(KeyCode.F) && emptyInRange){
             background.style.display = DisplayStyle.Flex;
             showToBuy.style.display = DisplayStyle.None;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
@@ -50,13 +50,21 @@ public class BuyMenuController : MonoBehaviour
             menuOpen = true;
         }
         //If the player presses the escape key and is in range of the tower, the menu will close
-        if(Input.GetKeyDown(KeyCode.Escape) && inRange){
+        if(Input.GetKeyDown(KeyCode.Escape) && emptyInRange){
             background.style.display = DisplayStyle.None;
             showToBuy.style.display = DisplayStyle.Flex;
             tooBrokeLabel.style.display = DisplayStyle.None;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
             menuOpen = false;
+        }
+        if(emptyInRange && towerInRange){
+            Debug.Log("Deleting old tower");
+            emptyInRange = false;
+            towerSpawnTransform = null;
+            showToBuy.style.display = DisplayStyle.None;
+            tooBrokeLabel.style.display = DisplayStyle.None;
+            Destroy(tempTowerToDelete);
         }
     
     }
@@ -65,20 +73,28 @@ public class BuyMenuController : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "emptyTower"){
             //Debug.Log("In Range");
-            inRange = true;
+            emptyInRange = true;
+            tempTowerToDelete = other.gameObject;
             towerSpawnTransform = other.transform;
             showToBuy.style.display = DisplayStyle.Flex;
             tooBrokeLabel.style.display = DisplayStyle.None;
+        }
+        
+        if(other.tag == "Tower"){
+            towerInRange = true;
         }
     }
     //When the player exits the trigger zone, the inRange bool is set to false
     private void OnTriggerExit(Collider other) {
         if(other.tag == "emptyTower"){
-            inRange = false;
+            emptyInRange = false;
             towerSpawnTransform = null;
             showToBuy.style.display = DisplayStyle.None;
             tooBrokeLabel.style.display = DisplayStyle.None;
         } 
+        if(other.tag == "Tower"){
+            towerInRange = false;
+        }
     }
 
     private void buy1ButtonPressed(ClickEvent click)
@@ -110,11 +126,9 @@ public class BuyMenuController : MonoBehaviour
         }
         
     }
-
-
     private void makeTower(GameObject tower){
         menuOpen = false;
-        inRange = false;
+        emptyInRange = false;
         Instantiate(tower, towerSpawnTransform.position, towerSpawnTransform.rotation);
         Destroy(towerSpawnTransform.gameObject);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
