@@ -6,5 +6,12 @@
     -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
     color: rgb(236, 195, 48);
     -unity-text-outline-width: 0.5px;
-    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    -unity-text-outline-color: rgb(0, 0, 0);
+}
+
+.LeaderboardStyle {
+    height: 32px;
+    width: 529px;
+    -unity-text-align: upper-left;
+    font-size: 22px;
 }

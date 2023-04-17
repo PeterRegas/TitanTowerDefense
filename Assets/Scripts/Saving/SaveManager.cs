@@ -46,10 +46,10 @@ public class SaveManager : MonoBehaviour
         saveStats.roundNum = levelcontrol.GetComponent<LevelControls>().roundNum;
         saveStats.creditNum = levelcontrol.GetComponent<LevelControls>().Money;
         saveStats.livesNum = levelcontrol.GetComponent<LevelControls>().Lives;
-        Debug.Log("Following is saved:");
-        Debug.Log(saveStats.roundNum);
-        Debug.Log(saveStats.creditNum);
-        Debug.Log(saveStats.livesNum);
+        // Debug.Log("Following is saved:");
+        // Debug.Log(saveStats.roundNum);
+        // Debug.Log(saveStats.creditNum);
+        // Debug.Log(saveStats.livesNum);
 
         // save the data
         saveStats.towerList = GameObject.FindGameObjectsWithTag("Tower");
