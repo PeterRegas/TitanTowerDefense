@@ -22,5 +22,6 @@
         <ui:VisualElement style="height: 64px; width: 386px; position: absolute; bottom: 66px; background-color: rgba(96, 96, 96, 0.74); border-top-left-radius: 42px; border-bottom-left-radius: 42px; border-top-right-radius: 42px; border-bottom-right-radius: 42px; justify-content: center; align-items: center;">
             <ui:Label text="Press F to Upgrade " display-tooltip-when-elided="true" name="InteractLabel" class="HudLabels" style="height: 45px; width: 342px; bottom: auto; position: absolute; background-color: rgba(96, 96, 96, 0); border-top-left-radius: 42px; border-bottom-left-radius: 42px; border-top-right-radius: 42px; border-bottom-right-radius: 42px;" />
         </ui:VisualElement>
+        <ui:Label text="You Do not have enouh credits" display-tooltip-when-elided="true" name="TooBrokeLevel2" class="HudLabels" style="-unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); font-size: 33px; display: flex; -unity-text-outline-width: 0.5px; -unity-text-outline-color: rgb(0, 0, 0); color: rgb(236, 193, 59); width: 449px; position: absolute; bottom: 171px; -unity-text-align: upper-center;" />
     </ui:VisualElement>
 </ui:UXML>
