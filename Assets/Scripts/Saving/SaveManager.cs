@@ -41,6 +41,7 @@ public class SaveManager : MonoBehaviour
         saveStats.towerTypeList.Clear();
         saveStats.towerListPos.Clear();
         saveStats.towerListRot.Clear();
+        saveStats.towerLevelList.Clear();
         saveStats.levelName = SceneManager.GetActiveScene().name;
         saveStats.roundNum = levelcontrol.GetComponent<LevelControls>().roundNum;
         saveStats.creditNum = levelcontrol.GetComponent<LevelControls>().Money;
@@ -52,17 +53,19 @@ public class SaveManager : MonoBehaviour
 
         // save the data
         saveStats.towerList = GameObject.FindGameObjectsWithTag("Tower");
-        //Debug.Log(saveStats.towerList.Length);
+        //Loop through all towers and save their type, level, position and rotation
         for (int i = 0; i < saveStats.towerList.Length; i++)
         {
             //if towerList[i] is a tower
             if(saveStats.towerList[i].GetComponent<Tower>() != null){
                 saveStats.towerTypeList.Add(0);
+                saveStats.towerLevelList.Add(saveStats.towerList[i].GetComponent<Tower>().towerLevel);
             }
             else if (saveStats.towerList[i].GetComponent<SpinTower>() != null){
                 saveStats.towerTypeList.Add(1);
+                saveStats.towerLevelList.Add(saveStats.towerList[i].GetComponent<SpinTower>().towerLevel);
             }
-
+            
             
             saveStats.towerListPos.Add(saveStats.towerList[i].transform.position);
             saveStats.towerListRot.Add(saveStats.towerList[i].transform.rotation);

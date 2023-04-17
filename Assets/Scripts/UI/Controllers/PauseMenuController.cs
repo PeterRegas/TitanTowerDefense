@@ -34,7 +34,7 @@ public class PauseMenuController : MonoBehaviour
 
      private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false && !buyMenuController.menuOpen )
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false && !buyMenuController.buyMenuOpen )
         {
             pause();
             Debug.Log("pause");

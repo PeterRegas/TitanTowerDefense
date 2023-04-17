@@ -54,7 +54,18 @@ public class Tower : MonoBehaviour
             }
 
         }
-
+        if(towerLevel == 2){
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+        if(towerLevel == 3){
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        if(towerLevel == 4){
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+        if(towerLevel == 5){
+            GetComponent<Renderer>().material.color = Color.magenta;
+        }
         
     }
     void shoot(){
@@ -62,5 +73,13 @@ public class Tower : MonoBehaviour
         bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*2);
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
+    }
+    public void Upgrade(){
+        towerLevel++;
+        //Change color based on level
+        
+        
+
+        
     }
 }

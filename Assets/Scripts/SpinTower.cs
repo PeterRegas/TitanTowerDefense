@@ -50,7 +50,19 @@ public class SpinTower : MonoBehaviour
             }
 
         }
-        
+        //Change color based on level
+        if(towerLevel == 2){
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+        if(towerLevel == 3){
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        if(towerLevel == 4){
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+        if(towerLevel == 5){
+            GetComponent<Renderer>().material.color = Color.magenta;
+        }
     }
     void shoot(){
         GameObject bulletClone = Instantiate(bullet, barrel.position, transform.rotation);
@@ -58,4 +70,11 @@ public class SpinTower : MonoBehaviour
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
     }
+
+    public void Upgrade(){
+        towerLevel++;
+        
+        
+    }
+
 }

@@ -17,7 +17,13 @@ public class SaveLoader : MonoBehaviour
         if(saveStats.towerList != null){
             Debug.Log("Towerlist exists");
             for(int i = 0; i< saveStats.towerList.Length; i++){
-                Instantiate(saveManager.towerTypes[saveStats.towerTypeList[i]], saveStats.towerListPos[i], saveStats.towerListRot[i]);
+                GameObject temp = Instantiate(saveManager.towerTypes[saveStats.towerTypeList[i]], saveStats.towerListPos[i], saveStats.towerListRot[i]);
+                if (temp.GetComponent<Tower> () != null) {
+                    temp.GetComponent<Tower> ().towerLevel = saveStats.towerLevelList[i];
+                }
+                else if(temp.GetComponent<SpinTower>() != null){
+                    temp.GetComponent<SpinTower>().towerLevel = saveStats.towerLevelList[i];
+                }
             }
         }
     }
