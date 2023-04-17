@@ -8,9 +8,14 @@ public class SaveManager : MonoBehaviour
     private static SaveManager instance;
     private string savePath;
     [SerializeField] public GameObject [] towerTypes;
+    public GameObject levelcontrol;
+    
+  
+
     private void Awake()
     {
         
+
         if(instance == null)
         {
             DontDestroyOnLoad(this);
@@ -31,12 +36,20 @@ public class SaveManager : MonoBehaviour
     [ContextMenu("Save playerStats")]
     public void saveGameStats()
     {
-        Debug.Log("Saving");
+        levelcontrol = GameObject.FindGameObjectWithTag("levelcontrol");
+        //Debug.Log("Saving");
         saveStats.towerTypeList.Clear();
         saveStats.towerListPos.Clear();
         saveStats.towerListRot.Clear();
         saveStats.levelName = SceneManager.GetActiveScene().name;
-        
+        saveStats.roundNum = levelcontrol.GetComponent<LevelControls>().roundNum;
+        saveStats.creditNum = levelcontrol.GetComponent<LevelControls>().Money;
+        saveStats.livesNum = levelcontrol.GetComponent<LevelControls>().Lives;
+        Debug.Log("Following is saved:");
+        Debug.Log(saveStats.roundNum);
+        Debug.Log(saveStats.creditNum);
+        Debug.Log(saveStats.livesNum);
+
         // save the data
         saveStats.towerList = GameObject.FindGameObjectsWithTag("Tower");
         //Debug.Log(saveStats.towerList.Length);

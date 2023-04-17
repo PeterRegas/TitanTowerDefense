@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class LevelControls : MonoBehaviour
 {
-    public int roundNum;
+    public int roundNum = 1;
     public int Money;
     public int Lives;
-    // Start is called before the first frame update
-    void Start()
+
+    private SaveManager saveManager;
+    
+    void Awake()
     {
-        Money = 0;;
-        Lives = 100;
+        saveManager = FindObjectOfType<SaveManager>();
+        roundNum = saveManager.saveStats.roundNum;
+        Money = saveManager.saveStats.creditNum;
+        Lives = saveManager.saveStats.livesNum;
     }
 
     // Update is called once per frame
     void Update()
     {
         roundNum = GetComponent<EnemySpawn>().round;
+        
     }
 
 }

@@ -10,17 +10,20 @@ public class BuyMenuController : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] UIDocument buyMenuDocument;
-    public Button buy1Button, buy2Button;
+    public Button buy1Button, buy2Button, closeButton;
     private VisualElement background, showToBuy;
+    private LevelControls levelControls;
 
     private bool inRange = false;
     public bool menuOpen = false;
     [SerializeField] GameObject[] towers;
     private Transform towerSpawnTransform;
+
+    private Label tooBrokeLabel;
     void Start()
     {
         Debug.Log(menuOpen);
-        
+        levelControls  = FindObjectOfType<LevelControls>();
         var root = buyMenuDocument.rootVisualElement;
         background = root.Q<VisualElement>("Background");
         background.style.display = DisplayStyle.None;
@@ -31,7 +34,10 @@ public class BuyMenuController : MonoBehaviour
         buy1Button.RegisterCallback<ClickEvent>(buy1ButtonPressed);
         buy2Button = root.Q<Button>("Tower2Button");
         buy2Button.RegisterCallback<ClickEvent>(buy2ButtonPressed);
-
+        tooBrokeLabel = root.Q<Label>("TooBrokeLevel");
+        tooBrokeLabel.style.display = DisplayStyle.None;
+        closeButton = root.Q<Button>("CloseButton");
+        closeButton.RegisterCallback<ClickEvent>(closeButtonPressed);
     }
 
      private void Update() {
@@ -47,6 +53,7 @@ public class BuyMenuController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) && inRange){
             background.style.display = DisplayStyle.None;
             showToBuy.style.display = DisplayStyle.Flex;
+            tooBrokeLabel.style.display = DisplayStyle.None;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
             menuOpen = false;
@@ -61,6 +68,7 @@ public class BuyMenuController : MonoBehaviour
             inRange = true;
             towerSpawnTransform = other.transform;
             showToBuy.style.display = DisplayStyle.Flex;
+            tooBrokeLabel.style.display = DisplayStyle.None;
         }
     }
     //When the player exits the trigger zone, the inRange bool is set to false
@@ -69,6 +77,7 @@ public class BuyMenuController : MonoBehaviour
             inRange = false;
             towerSpawnTransform = null;
             showToBuy.style.display = DisplayStyle.None;
+            tooBrokeLabel.style.display = DisplayStyle.None;
         } 
     }
 
@@ -77,7 +86,14 @@ public class BuyMenuController : MonoBehaviour
         Debug.Log("Tower 1 Button Pressed");
         Debug.Log("Tower Spawned");
         Debug.Log(towerSpawnTransform.position);
-        makeTower(towers[0]);
+        if(levelControls.Money >= 100){
+            levelControls.Money -= 100;
+            makeTower(towers[0]);
+        }
+        else{
+            tooBrokeLabel.style.display = DisplayStyle.Flex;
+        }
+
     }
 
     private void buy2ButtonPressed(ClickEvent click)
@@ -85,7 +101,14 @@ public class BuyMenuController : MonoBehaviour
         Debug.Log("Tower 2 Button Pressed");
         Debug.Log("Tower Spawned");
         Debug.Log(towerSpawnTransform.position);
-        makeTower(towers[1]);
+        if(levelControls.Money >= 50){
+            levelControls.Money -= 50;
+            makeTower(towers[1]);
+        }
+        else{
+            tooBrokeLabel.style.display = DisplayStyle.Flex;
+        }
+        
     }
 
 
@@ -99,5 +122,15 @@ public class BuyMenuController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    private void closeButtonPressed(ClickEvent click)
+    {
+        //Debug.Log("Close Button Pressed");
+        background.style.display = DisplayStyle.None;
+        showToBuy.style.display = DisplayStyle.Flex;
+        tooBrokeLabel.style.display = DisplayStyle.None;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+        menuOpen = false;
+    }
     
 }

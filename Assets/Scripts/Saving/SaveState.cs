@@ -8,6 +8,7 @@ public class SaveState
 {
     public int roundNum;
     public int creditNum;
+    public int livesNum;
     public string levelName;
     
     public GameObject [] towerList;
@@ -20,7 +21,8 @@ public class SaveState
     public SaveState()
     {
         roundNum = 1;
-        creditNum = 100;
+        livesNum = 100;
+        creditNum = 0;
         towerList = null;
         levelName = "";
         towerTypeList = new List<int>();
@@ -29,10 +31,12 @@ public class SaveState
     }
     
     //SaveState Constructor
-    public SaveState(int roundNum, int creditNum, string levelName, GameObject [] towerList, List<int> towerTypeList, List<Vector3> towerListPos, List<Quaternion> towerListRot)
+    public SaveState(int roundNum, int creditNum, int livesNum, string levelName, GameObject [] towerList, 
+                    List<int> towerTypeList, List<Vector3> towerListPos, List<Quaternion> towerListRot)
     {
         this.roundNum = roundNum;
         this.creditNum = creditNum;
+        this.livesNum = livesNum;
         this.levelName = levelName;
         this.towerList = towerList;
         this.towerTypeList = towerTypeList;

@@ -10,9 +10,18 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] enemy;
     [SerializeField] private Transform[] spawn;
 
-    [SerializeField] public int round = 1;
+    [SerializeField] public int round;
     [SerializeField] private int totalEnemies;
     public bool startRound;
+     public GameObject levelcontrol;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        levelcontrol = GameObject.FindGameObjectWithTag("levelcontrol");
+        round = levelcontrol.GetComponent<LevelControls>().roundNum;
+        Debug.Log("Round is: " + round);
+    }
 
     void FixedUpdate()
     {
@@ -37,12 +46,13 @@ public class EnemySpawn : MonoBehaviour
         else{
             if(startRound){
                 round++;
-                GetComponent<LevelControls>().Money+=10;
+                GetComponent<LevelControls>().Money+=50;
                 k=0;
             }
         }
     } 
     void Update(){
+        
         if(Input.GetKeyDown(KeyCode.E)){
             startRound = true;
         }

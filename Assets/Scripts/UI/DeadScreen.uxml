@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(250, 4, 4, 0.57); justify-content: center; align-items: center;">
+        <ui:VisualElement name="DeadScreen" style="height: 320px; width: 611px; -unity-text-align: upper-center; align-items: center; justify-content: center;">
+            <ui:Label text="Too weak" display-tooltip-when-elided="true" name="DeadLabel" style="-unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); font-size: 96px; -unity-text-align: upper-center;" />
+            <ui:Button text="Return To Main Menu" display-tooltip-when-elided="true" name="QuitButton" class="ButtonStyle" style="-unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); height: 46px; width: 196px; font-size: 20px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
