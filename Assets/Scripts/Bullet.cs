@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float damage;
     private void Start() {
         levelcontrol = GameObject.FindGameObjectWithTag("levelcontrol");
+        Destroy(gameObject, 5f);
     }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "enemy"){
@@ -16,6 +17,7 @@ public class Bullet : MonoBehaviour
                 levelcontrol.GetComponent<LevelControls>().Money+=1;
                 Destroy(other);
             }
+            Destroy(gameObject);
         }
     }
 }
