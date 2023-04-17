@@ -12,6 +12,7 @@ public class SaveState
     public string levelName;
     
     public GameObject [] towerList;
+    public List<int> towerLevelList;
     public List<Vector3> towerListPos;
     public List<int> towerTypeList;
     public List<Quaternion> towerListRot;
@@ -26,6 +27,7 @@ public class SaveState
         towerList = null;
         levelName = "";
         towerTypeList = new List<int>();
+        towerLevelList = new List<int>();
         towerListPos = new List<Vector3>(); 
         towerListRot = new List<Quaternion>();
     }
