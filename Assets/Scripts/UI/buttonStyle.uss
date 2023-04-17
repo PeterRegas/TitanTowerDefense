@@ -20,6 +20,7 @@
     padding-bottom: 0;
     flex-grow: 0;
     top: 15px;
+    background-color: rgba(195, 195, 195, 255);
 }
 
 .ButtonStyle:hover {
@@ -58,4 +59,52 @@
     border-bottom-width: -88px;
     margin-top: 6px;
     background-color: rgb(82, 85, 156);
+}
+
+.CloseButtonStyle {
+    height: 33px;
+    width: 38px;
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
+    font-size: 26px;
+    background-color: rgb(236, 193, 59);
+}
+
+.CloseButtonStyle:hover {
+    height: 33px;
+    width: 38px;
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
+    font-size: 26px;
+    background-color: rgb(195, 155, 30);
+}
+
+.CloseButtonStyle:active {
+    height: 33px;
+    width: 38px;
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
+    font-size: 26px;
+    background-color: rgb(236, 193, 59);
 }

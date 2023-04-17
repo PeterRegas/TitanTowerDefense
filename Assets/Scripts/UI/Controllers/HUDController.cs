@@ -27,7 +27,7 @@ public class HUDController : MonoBehaviour
     {
         // Debug.Log("HUDController");
         // Debug.Log(saveManager.saveStats.roundNum);
-        // Debug.Log(saveManager.saveStats.creditNum);
+        // Debug.Log(levelControls.Money);
         // Debug.Log(saveManager.saveStats.livesNum);
         
         roundLabel.text = "Round: " + levelControls.roundNum;
