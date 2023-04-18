@@ -9,6 +9,8 @@ You can work on this assignment alone or in a group of no more than 2 students.
 
 Trailer video URL: _________________________
 
+Slides URL: https://docs.google.com/presentation/d/1UVag56ZrPXcUavKHQzpjLYNy8f3wdg4BfYNqh5vWNtA/edit?usp=sharing 
+
 _**Note:** The commit logs will be examined to be sure that both participants participated equally on this project._
 
 _**Note:** You can delete the unused rows from the table, if working alone._
