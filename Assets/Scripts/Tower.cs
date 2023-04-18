@@ -13,8 +13,9 @@ public class Tower : MonoBehaviour
     [SerializeField] Transform barrel;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] GameObject bullet;
+    public AudioSource cannon;
     private int j = 0;
-    private GameObject target;
+    public GameObject target;
     public int towerLevel = 1;
     private float newfireRate;
     public float damage;
@@ -22,8 +23,14 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        newfireRate = fireRate - towerLevel*1.5f;
+        newfireRate = fireRate - towerLevel*2.5f;
         enemies = GameObject.FindGameObjectsWithTag("enemy");
+        if(target!=null){
+            if(Vector3.Distance(target.GetComponent<Transform>().position, transform.position)>range || target.tag == "dead"){
+                target = null;
+            }
+        }
+
         if(enemies!=null){
             foreach(GameObject i in enemies){
                 distance = Vector3.Distance(i.GetComponent<Transform>().position, transform.position);
@@ -31,7 +38,7 @@ public class Tower : MonoBehaviour
                     if(target == null){
                         target = i;
                     }
-                    if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
+                    if(i.GetComponent<EnemyMovement>().distanceToExit < target.GetComponent<EnemyMovement>().distanceToExit){
                         target = i;
                     }
                 }
@@ -42,8 +49,8 @@ public class Tower : MonoBehaviour
                     Vector3 targetDirection = (target.transform.position - gun.position).normalized;
                     if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
                         gun.LookAt(target.GetComponent<Transform>().position);
-                        gun.transform.Rotate(1f,1f,1f);
-                        j++;
+                        gun.transform.Rotate(-5f,0f,0f);
+                        
                         
                         if(j >= newfireRate){
                             j=0;
@@ -52,7 +59,6 @@ public class Tower : MonoBehaviour
                     }
                 }
             }
-
         }
         if(towerLevel == 2){
             GetComponent<Renderer>().material.color = Color.green;
@@ -66,11 +72,13 @@ public class Tower : MonoBehaviour
         if(towerLevel == 5){
             GetComponent<Renderer>().material.color = Color.magenta;
         }
+        j++;
         
     }
     void shoot(){
         GameObject bulletClone = Instantiate(bullet, barrel.position, transform.rotation);
-        bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*2);
+        cannon.Play();
+        bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*5);
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
     }

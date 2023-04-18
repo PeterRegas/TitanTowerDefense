@@ -13,13 +13,19 @@ public class SpinTower : MonoBehaviour
     [SerializeField] Transform barrel;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] GameObject bullet;
+    public AudioSource cannon;
     private int j = 0;
     private GameObject target;
     public int towerLevel = 1;
     private float newfireRate;
     public float damage;
     void FixedUpdate(){
-        newfireRate = fireRate - towerLevel*1.5f;
+        newfireRate = fireRate - towerLevel*2.5f;
+        if(target!=null){
+            if(Vector3.Distance(target.GetComponent<Transform>().position, transform.position)>range || target.tag == "dead"){
+                target = null;
+            }
+        }
         if(GameObject.FindGameObjectsWithTag("enemy") != null){
             enemies = GameObject.FindGameObjectsWithTag("enemy");
             foreach(GameObject i in enemies){
@@ -28,7 +34,7 @@ public class SpinTower : MonoBehaviour
                     if(target == null){
                         target = i;
                     }
-                    if(i.GetComponent<EnemyMovement>().distanceToTarget < target.GetComponent<EnemyMovement>().distanceToTarget){
+                    if(i.GetComponent<EnemyMovement>().distanceToExit < target.GetComponent<EnemyMovement>().distanceToExit){
                         target = i;
                     }
                 }
@@ -37,18 +43,13 @@ public class SpinTower : MonoBehaviour
                 distance = Vector3.Distance(target.GetComponent<Transform>().position, transform.position);
                 if(distance<=range){
                     Vector3 targetDirection = (target.transform.position - gun.position).normalized;
-                    if(!Physics.Raycast(gun.position, targetDirection, distance, wallLayer)) {
-                        gun.Rotate(0,1f,0);
-                        j++;
-                        
-                        if(j >= newfireRate){
-                            j=0;
-                            shoot();
-                        }
+                    gun.Rotate(0,1f,0);
+                    if(j >= newfireRate){
+                         j=0;
+                        shoot();
                     }
                 }
             }
-
         }
         //Change color based on level
         if(towerLevel == 2){
@@ -63,10 +64,12 @@ public class SpinTower : MonoBehaviour
         if(towerLevel == 5){
             GetComponent<Renderer>().material.color = Color.magenta;
         }
+        j++;
     }
     void shoot(){
         GameObject bulletClone = Instantiate(bullet, barrel.position, transform.rotation);
-        bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*2);
+        cannon.Play();
+        bulletClone.GetComponent<Bullet>().damage = damage+(towerLevel*5    );
         bulletClone.GetComponent<Rigidbody>().AddForce(gun.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
     }

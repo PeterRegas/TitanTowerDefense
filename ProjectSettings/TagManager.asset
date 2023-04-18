@@ -11,6 +11,8 @@ TagManager:
   - emptyTower
   - Tower
   - levelcontrol
+  - chest
+  - dead
   layers:
   - Default
   - TransparentFX

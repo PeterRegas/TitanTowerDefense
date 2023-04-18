@@ -12,8 +12,10 @@ public class EnemyMovement : MonoBehaviour {
     public Slider healthslide;
     public Canvas healthslideCanvas;
     public float distanceToTarget;
+    public float distanceToExit;
     public float health = 100f;
     public float MaxHealth=100f;
+
     //[SerializeField] Animator animator = null;
     public int wayPointIndex = 1;
 
@@ -32,8 +34,9 @@ public class EnemyMovement : MonoBehaviour {
         healthslide.value = health/MaxHealth;
         if(health<=0){
             agent.speed = 0;
+            agent.tag = "dead";
+            (agent.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
             animator.SetTrigger("dying");
-            
             Destroy(gameObject, 3.5f);
             return;
 
@@ -41,6 +44,7 @@ public class EnemyMovement : MonoBehaviour {
         if(wayPointIndex<waypoints.Length-1){
             agent.SetDestination(waypoints[wayPointIndex].position);
             distanceToTarget = Vector3.Distance(agent.transform.position, waypoints[wayPointIndex].position);
+            distanceToExit = Vector3.Distance(agent.transform.position, waypoints[waypoints.Length-1].position);
             if (distanceToTarget < closeEnoughDistance) {
                 // make the next waypoint active
                 wayPointIndex++;    

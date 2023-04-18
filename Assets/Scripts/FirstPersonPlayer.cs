@@ -9,6 +9,7 @@ public class FirstPersonPlayer : MonoBehaviour {
     [SerializeField] Transform gun;
     [SerializeField] GameObject bullet;
     [SerializeField] float shotSpeed;
+    [SerializeField] float firerate = 100;
 
     [Header("Falling")]
     [SerializeField] private float gravityFactor = 1f;
@@ -86,8 +87,9 @@ public class FirstPersonPlayer : MonoBehaviour {
                 crouching = true;
             }
         }
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(0) && firerate>=100){
             shoot();
+            firerate = 0;
         }
 
         // handle movement
@@ -106,5 +108,8 @@ public class FirstPersonPlayer : MonoBehaviour {
         
         bulletClone.GetComponent<Rigidbody>().AddForce(camera.transform.forward * shotSpeed);
         Destroy(bulletClone,10);
+    }
+    private void FixedUpdate() {
+        firerate++;    
     }
 }
