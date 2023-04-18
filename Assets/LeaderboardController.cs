@@ -4,36 +4,42 @@ using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UIElements;
 
-public class LeaderboardController : MonoBehaviour 
+
+public class LeaderboardController : MonoBehaviour
 {
     public int memberID, score;
-    public string  leaderboardKey;
+    
 
     private static LeaderboardController instance;
     UIDocument leaderboardDocument;
     [SerializeField] private UIDocument mainMenuDocument;
     private Button closeButton, leaderButton;
     private VisualElement background, mainMenu;
-    private Label [] leaderboardLabels = new Label[5];
-    private Label [] leaderboardScores = new Label[5];
+    public Label[] leaderboardLabels = new Label[5];
+    public Label[] leaderboardScores = new Label[5];
 
     [SerializeField] private MainMenuController mainMenuController;
     public string playerName;
 
+    private LeaderboardManager leaderboardManager;
+
     private SaveManager saveManager;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
-        DontDestroyOnLoad(this);
-
+        Debug.Log("Leaderboard Controller Started");
         saveManager = FindObjectOfType<SaveManager>();
         leaderboardDocument = GetComponent<UIDocument>();
         var root = leaderboardDocument.rootVisualElement;
 
         var mainMenuRoot = mainMenuDocument.rootVisualElement;
         mainMenu = mainMenuRoot.Q<VisualElement>("Background");
-       // mainMenu.style.display = DisplayStyle.None;
+        // mainMenu.style.display = DisplayStyle.None;
+
+        leaderboardManager = FindObjectOfType<LeaderboardManager>();
 
         closeButton = root.Q<Button>("CloseButton");
         closeButton.RegisterCallback<ClickEvent>(closeButtonPressed);
@@ -55,62 +61,11 @@ public class LeaderboardController : MonoBehaviour
         leaderboardScores[2] = root.Q<Label>("Player3Score");
         leaderboardScores[3] = root.Q<Label>("Player4Score");
         leaderboardScores[4] = root.Q<Label>("Player5Score");
-
-        LootLockerSDKManager.StartGuestSession((response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Session Started");
-                
-            }
-            else
-            {
-                Debug.Log("Session Failed");
-            }
-        });
+        
+        //StartCoroutine(leaderboardManager.StartSession());
     }
 
-    [ContextMenu("Submit Score")]
-    public void SubmitScore(int score)
-    {
-        LootLockerSDKManager.SubmitScore(saveManager.playerName, score, leaderboardKey ,(response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Score Submitted");
-            }
-            else
-            {
-                Debug.Log("Score Failed");
-            }
-        });
-    }
-    [ContextMenu("Show Scores")]
-    public void ShowScores (){
-
-        // for (int i =0 ; i < leaderboardLabels.Length; i++){
-        //     Debug.Log(leaderboardLabels[i].text);
-        // }
-
-        LootLockerSDKManager.GetScoreList(leaderboardKey, 5, 0, (response) =>
-        {
-            if (response.statusCode == 200)
-            {
-                Debug.Log("Score List Received");
-                LootLockerLeaderboardMember [] members = response.items;
-                for (int i = 0; i < members.Length; i++)
-                {
-                    leaderboardLabels[i].text = members[i].member_id;
-                    leaderboardScores[i].text = "Round " + members[i].score.ToString();
-                }
-            }
-            else
-            {
-                Debug.Log("Score List Failed");
-            }
-        });
-    }
-
+    
     private void closeButtonPressed(ClickEvent evt)
     {
         background.style.display = DisplayStyle.None;
@@ -120,6 +75,6 @@ public class LeaderboardController : MonoBehaviour
     {
         mainMenu.style.display = DisplayStyle.None;
         background.style.display = DisplayStyle.Flex;
-        ShowScores();
+        StartCoroutine(leaderboardManager.ShowScores());
     }
 }

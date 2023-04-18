@@ -200,6 +200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4851181284806360525, guid: c4a43d3149fbedc4fa4b8255a26dbc8a, type: 3}
+      propertyPath: leaderboardKey
+      value: TitanDefenseLiveKey
+      objectReference: {fileID: 0}
     - target: {fileID: 5589601158824335830, guid: c4a43d3149fbedc4fa4b8255a26dbc8a, type: 3}
       propertyPath: m_SortingOrder
       value: 1

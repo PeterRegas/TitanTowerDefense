@@ -14,9 +14,12 @@ public class DeadScreenController : MonoBehaviour
     public string  leaderboardKey;
     private SaveManager saveManager;
 
+    private LeaderboardManager leaderboardManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        leaderboardManager = FindObjectOfType<LeaderboardManager>();
         saveManager = FindObjectOfType<SaveManager>();
         levelControls  = FindObjectOfType<LevelControls>();
         var root = deadScreenDocument.rootVisualElement;
@@ -25,18 +28,6 @@ public class DeadScreenController : MonoBehaviour
         quitButton.RegisterCallback<ClickEvent>(quitButtonPressed);
         background.style.display = DisplayStyle.None;
 
-        LootLockerSDKManager.StartGuestSession((response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Session Started");
-                
-            }
-            else
-            {
-                Debug.Log("Session Failed");
-            }
-        });
     }
 
     // Update is called once per frame
@@ -44,7 +35,6 @@ public class DeadScreenController : MonoBehaviour
     {
         if (levelControls.Lives <= 0)
         {
-            SubmitScore(levelControls.roundNum);
             background.style.display = DisplayStyle.Flex;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
@@ -53,24 +43,10 @@ public class DeadScreenController : MonoBehaviour
     }
     void quitButtonPressed(ClickEvent click)
     {
+        StartCoroutine(leaderboardManager.SubmitScore(saveManager.playerName, levelControls.roundNum));
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
         
     }
 
-    [ContextMenu("Submit Score")]
-    public void SubmitScore(int score)
-    {
-        LootLockerSDKManager.SubmitScore(saveManager.playerName, score, leaderboardKey ,(response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Score Submitted");
-            }
-            else
-            {
-                Debug.Log("Score Failed");
-            }
-        });
-    }
 }
