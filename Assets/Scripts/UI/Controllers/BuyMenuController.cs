@@ -71,9 +71,9 @@ public class BuyMenuController : MonoBehaviour
             tooBrokeLabel.style.display = DisplayStyle.None;
             Destroy(tempTowerToDelete);
         }
-        if(Input.GetKeyDown(KeyCode.F) && towerInRange && tempTowerToUpgrade.GetComponent<Tower>().towerLevel < 5){
+        if(Input.GetKeyDown(KeyCode.F) && towerInRange ){
             //Check if Spin tower script component exists in tempTowerToUpgrade
-            if(tempTowerToUpgrade.GetComponent<Tower>() != null){
+            if(tempTowerToUpgrade.GetComponent<Tower>() != null && tempTowerToUpgrade.GetComponent<Tower>().towerLevel < 5){
                 
                 //If the player has enough money, the tower will be upgraded
                 if(levelControls.Money >= 100){
@@ -85,7 +85,7 @@ public class BuyMenuController : MonoBehaviour
                     tooBrokeLabel2.style.display = DisplayStyle.Flex;
                 }
             }
-            if(tempTowerToUpgrade.GetComponent<SpinTower>() != null ){
+            if(tempTowerToUpgrade.GetComponent<SpinTower>() != null && tempTowerToUpgrade.GetComponent<SpinTower>().towerLevel < 5){
                 
                 //If the player has enough money, the tower will be upgraded
                 if(levelControls.Money >= 100){
@@ -121,6 +121,7 @@ public class BuyMenuController : MonoBehaviour
                 tooBrokeLabel2.style.display = DisplayStyle.None;
             }
             else if (tempTowerToUpgrade.GetComponent<SpinTower>() != null && tempTowerToUpgrade.GetComponent<SpinTower>().towerLevel < 5){
+                Debug.Log("Spin Tower in range");
                 showToUpgrade.style.display = DisplayStyle.Flex;
                 tooBrokeLabel2.style.display = DisplayStyle.None;
             }

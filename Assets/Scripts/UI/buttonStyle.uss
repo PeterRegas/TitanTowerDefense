@@ -20,7 +20,9 @@
     padding-bottom: 0;
     flex-grow: 0;
     top: 15px;
-    background-color: rgba(195, 195, 195, 255);
+    background-color: rgb(236, 195, 48);
+    font-size: 21px;
+    -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
 }
 
 .ButtonStyle:hover {
@@ -39,7 +41,7 @@
     border-top-width: -88px;
     border-bottom-width: -88px;
     margin-top: 6px;
-    background-color: rgb(185, 97, 97);
+    background-color: rgb(195, 155, 30);
 }
 
 .ButtonStyle:active {
@@ -58,7 +60,7 @@
     border-top-width: -88px;
     border-bottom-width: -88px;
     margin-top: 6px;
-    background-color: rgb(82, 85, 156);
+    background-color: rgb(236, 195, 48);
 }
 
 .CloseButtonStyle {
@@ -107,4 +109,34 @@
     -unity-font-definition: url('project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&guid=239815be6c4e4624ba40d9edd87b32a2&type=2#Blomberg-8MKKZ SDF');
     font-size: 26px;
     background-color: rgb(236, 193, 59);
+}
+
+.TrophyStyle {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 63px;
+    height: 59px;
+    background-image: url('project://database/Assets/Scripts/UI/golden_trophy.png?fileID=2800000&guid=530f0f02c45c36542b5edf956fcd9caa&type=3#golden_trophy');
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+}
+
+.TrophyStyle:hover {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 63px;
+    height: 59px;
+    background-image: url('project://database/Assets/Scripts/UI/golden_trophy.png?fileID=2800000&guid=530f0f02c45c36542b5edf956fcd9caa&type=3#golden_trophy');
+    -unity-background-image-tint-color: rgba(204, 204, 204, 0.69);
+}
+
+.TrophyStyle:active {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 63px;
+    height: 59px;
+    background-image: url('project://database/Assets/Scripts/UI/golden_trophy.png?fileID=2800000&guid=530f0f02c45c36542b5edf956fcd9caa&type=3#golden_trophy');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
 }

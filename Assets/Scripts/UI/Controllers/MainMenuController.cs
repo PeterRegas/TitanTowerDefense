@@ -8,9 +8,16 @@ public class MainMenuController : MonoBehaviour
 {
 
     UIDocument mainMenuDoccument;
-    public Button startButton, selectButton, quitButton, loadButton;
+    [SerializeField] private UIDocument leaderBoardDocument;
+    public Button startButton, selectButton, quitButton, loadButton, leaderButton, submitButton;
     private SaveManager saveManager;
     public bool isLoad = false;
+
+    private VisualElement background, leaderBoard, enterNameBG;
+
+    private TextField nameField;
+
+    public string playerName;
     
 
     // Start is called before the first frame update
@@ -19,15 +26,31 @@ public class MainMenuController : MonoBehaviour
         saveManager = FindObjectOfType<SaveManager>();
         mainMenuDoccument = GetComponent<UIDocument>();
         var root = mainMenuDoccument.rootVisualElement;
+        var leaderRoot = leaderBoardDocument.rootVisualElement;
 
+        //All stuff in the main menu
         startButton = root.Q<Button>("StartButton");
         selectButton = root.Q<Button>("SelectLevelButton");
         quitButton = root.Q<Button>("QuitButton");
         loadButton = root.Q<Button>("LoadButton");
+        
+        background = root.Q<VisualElement>("Background");
         startButton.RegisterCallback<ClickEvent>(StartButtonPressed);
         loadButton.RegisterCallback<ClickEvent>(loadButtonPressed);
         selectButton.RegisterCallback<ClickEvent>(selectButtonPressed);
         quitButton.RegisterCallback<ClickEvent>(quitButtonPressed);
+        background.style.display = DisplayStyle.None;
+        //background.style.display = DisplayStyle.Flex;
+
+        enterNameBG = root.Q<VisualElement>("EnterNameBG");
+        enterNameBG.style.display = DisplayStyle.Flex;
+        submitButton = root.Q<Button>("SubmitButton");
+        submitButton.RegisterCallback<ClickEvent>(submitButtonPressed);
+        nameField = root.Q<TextField>("NameField");
+
+        //All stuff in the leader board
+        leaderBoard = leaderRoot.Q<VisualElement>("Background");
+        leaderBoard.style.display = DisplayStyle.None;
     }
 
 
@@ -58,5 +81,13 @@ public class MainMenuController : MonoBehaviour
         }else{
             loadButton.text = "No Save Found";
         }
+    }
+    
+    private void submitButtonPressed(ClickEvent click)
+    {
+        enterNameBG.style.display = DisplayStyle.None;
+        background.style.display = DisplayStyle.Flex;
+        
+        saveManager.playerName = nameField.text;
     }
 }

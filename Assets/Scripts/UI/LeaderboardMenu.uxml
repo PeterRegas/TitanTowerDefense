@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/HUDLabelStyle.uss?fileID=7433441132597879392&amp;guid=2d669185cf1333146917cc0c7a7ddf56&amp;type=3#HUDLabelStyle" />
+    <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement class="hudUIStyle">
+            <ui:Label text="Leaderboard" display-tooltip-when-elided="true" name="LeaderboardTitle" class="HudLabels" style="height: 39px; width: 216px; position: absolute; top: 24px;" />
+            <ui:VisualElement name="Top10Box" style="height: 210px; width: 521px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-direction: row;">
+                <ui:GroupBox style="height: 196px; width: 25px;">
+                    <ui:Label text="1." display-tooltip-when-elided="true" name="Rank1" class="HudLabels LeaderboardStyle" style="margin-left: 5px; width: 20px;" />
+                    <ui:Label text="2. " display-tooltip-when-elided="true" name="Rank2" class="HudLabels LeaderboardStyle" style="height: 32px; width: 20px;" />
+                    <ui:Label text="3. " display-tooltip-when-elided="true" name="Rank3" class="HudLabels LeaderboardStyle" style="width: 20px;" />
+                    <ui:Label text="4. " display-tooltip-when-elided="true" name="Rank4" class="HudLabels LeaderboardStyle" style="width: 20px;" />
+                    <ui:Label text="5. " display-tooltip-when-elided="true" name="Rank5" class="HudLabels LeaderboardStyle" style="width: 20px;" />
+                </ui:GroupBox>
+                <ui:GroupBox style="height: 195px; width: 77px;">
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player1" class="HudLabels LeaderboardStyle" style="margin-left: 2px; height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player2" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player3" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player4" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player5" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                </ui:GroupBox>
+                <ui:GroupBox style="height: 195px; width: 77px; position: absolute; right: 60px;">
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player1Score" class="HudLabels LeaderboardStyle" style="margin-left: 2px; height: 32px; width: 177px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player2Score" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player3Score" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player4Score" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                    <ui:Label text="N/a" display-tooltip-when-elided="true" name="Player5Score" class="HudLabels LeaderboardStyle" style="height: 32px; width: 275px;" />
+                </ui:GroupBox>
+            </ui:VisualElement>
+            <ui:Button text="X" display-tooltip-when-elided="true" name="CloseButton" class="CloseButtonStyle" style="height: 31px; width: 36px; position: absolute; top: 20px; right: 35px; font-size: 22px; -unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
