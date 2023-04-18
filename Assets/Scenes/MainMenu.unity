@@ -323,7 +323,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 1274efbbad376c94a87537ec8af521e6, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 6b1e34a9528e7a94dad6430203d18219, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!114 &558226689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281fe9d59ac60af499945ac4198a61ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leaderBoardDocument: {fileID: 1400790671}
   isLoad: 0
+  playerName: 
 --- !u!1 &609589803
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,9 +487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9f592eb66af2546a3713e308c0668b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memberID: {fileID: 0}
-  score: {fileID: 0}
+  memberID: 0
+  score: 0
   leaderboardKey: TitanDefenseKey
+  mainMenuDocument: {fileID: 558226688}
+  mainMenuController: {fileID: 558226689}
+  playerName: 
 --- !u!114 &1400790671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +508,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 1274efbbad376c94a87537ec8af521e6, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: a935214b6fb989544be85acbe67bd4f8, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 2
 --- !u!1 &2117432600
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +548,7 @@ MonoBehaviour:
     towerListPos: []
     towerTypeList: 
     towerListRot: []
+  playerName: 
   towerTypes:
   - {fileID: 1720726972743136351, guid: 268cf8ff2bb060f47aac8ab95c2c2d8d, type: 3}
   - {fileID: 5516506488763438349, guid: 649f2367c2e1aee43aba34561c924316, type: 3}

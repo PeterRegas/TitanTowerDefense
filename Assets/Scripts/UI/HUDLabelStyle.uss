@@ -15,3 +15,16 @@
     -unity-text-align: upper-left;
     font-size: 22px;
 }
+
+.hudUIStyle {
+    height: 460px;
+    width: 775px;
+    border-top-left-radius: 42px;
+    border-bottom-left-radius: 42px;
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
+    background-color: rgb(75, 75, 75);
+    -unity-text-align: upper-center;
+    align-items: center;
+    justify-content: center;
+}

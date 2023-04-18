@@ -22,7 +22,7 @@ public class SaveState
     public SaveState()
     {
         roundNum = 3;
-        livesNum = 100;
+        livesNum = 1;
         creditNum = 1000;
         towerList = null;
         levelName = "";

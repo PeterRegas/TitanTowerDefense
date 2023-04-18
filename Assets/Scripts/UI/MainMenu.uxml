@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
     <Style src="project://database/Assets/Scripts/UI/HUDLabelStyle.uss?fileID=7433441132597879392&amp;guid=2d669185cf1333146917cc0c7a7ddf56&amp;type=3#HUDLabelStyle" />
-    <ui:VisualElement name="Background" style="align-items: center; flex-grow: 1; justify-content: center;">
+    <ui:VisualElement name="Background" style="align-items: center; flex-grow: 1; justify-content: center; display: none;">
         <ui:Label text="Titan Tower Defense" display-tooltip-when-elided="true" class="HudLabels" style="font-size: 48px; position: absolute; top: 34px; -unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); height: 51px; width: 425px;" />
         <ui:VisualElement style="height: 301px; width: 225px; align-items: center; justify-content: center;">
             <ui:Label text="Main Menu" display-tooltip-when-elided="true" class="HudLabels" style="-unity-text-align: upper-center; font-size: 41px; position: absolute; top: 0; margin-bottom: 4px;" />
@@ -11,5 +11,13 @@
             <ui:Button text="Quit Game" display-tooltip-when-elided="true" name="QuitButton" class="ButtonStyle" style="display: flex; visibility: visible;" />
         </ui:VisualElement>
         <ui:Button display-tooltip-when-elided="true" name="LeaderButton" class="TrophyStyle" style="background-image: url(&apos;project://database/Assets/Scripts/UI/golden_trophy.png?fileID=2800000&amp;guid=530f0f02c45c36542b5edf956fcd9caa&amp;type=3#golden_trophy&apos;); width: 70px; height: 70px; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="EnterNameBG" style="flex-grow: 1; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement name="VisualElement" class="hudUIStyle" style="display: flex;">
+            <ui:Label text="Please Enter Your Name" display-tooltip-when-elided="true" name="AskNameLabel" class="HudLabels" style="height: 46px; width: 434px; -unity-text-align: middle-center; position: absolute; top: 32px;" />
+            <ui:Label text="Please Note that same names may write over the previous high Score" display-tooltip-when-elided="true" class="HudLabels" style="height: 25px; width: 608px; overflow: visible; font-size: 20px; flex-direction: column; flex-wrap: nowrap; white-space: normal; -unity-text-align: middle-left; position: absolute; bottom: 17px;" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="Enter Name Here" name="NameField" style="height: 55px; width: 366px; -unity-font-definition: url(&apos;project://database/Assets/Scripts/UI/Font/Blomberg-8MKKZ%20SDF.asset?fileID=11400000&amp;guid=239815be6c4e4624ba40d9edd87b32a2&amp;type=2#Blomberg-8MKKZ SDF&apos;); font-size: 27px; flex-direction: column; align-items: stretch; justify-content: center; position: absolute; top: 180px;" />
+            <ui:Button text="Submit" display-tooltip-when-elided="true" name="SubmitButton" class="ButtonStyle" style="position: absolute; bottom: 120px; top: auto;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

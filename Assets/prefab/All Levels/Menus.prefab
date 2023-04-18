@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadScreenDocument: {fileID: 8245692557580773794}
+  leaderboardKey: TitanDefenseKey
 --- !u!1 &5937629243522011567
 GameObject:
   m_ObjectHideFlags: 0

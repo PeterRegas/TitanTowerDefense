@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/HUDLabelStyle.uss?fileID=7433441132597879392&amp;guid=2d669185cf1333146917cc0c7a7ddf56&amp;type=3#HUDLabelStyle" />
     <Style src="project://database/Assets/Scripts/UI/buttonStyle.uss?fileID=7433441132597879392&amp;guid=c4756e7a4fbd143488ff1ab921cabeb6&amp;type=3#buttonStyle" />
-    <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center; display: none;">
-        <ui:VisualElement style="height: 460px; width: 775px; border-top-left-radius: 42px; border-bottom-left-radius: 42px; border-top-right-radius: 42px; border-bottom-right-radius: 42px; background-color: rgb(75, 75, 75); -unity-text-align: upper-center; align-items: center; justify-content: center;">
+    <ui:VisualElement name="Background" style="flex-grow: 1; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement class="hudUIStyle">
             <ui:Label text="Leaderboard" display-tooltip-when-elided="true" name="LeaderboardTitle" class="HudLabels" style="height: 39px; width: 216px; position: absolute; top: 24px;" />
             <ui:VisualElement name="Top10Box" style="height: 210px; width: 521px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-direction: row;">
                 <ui:GroupBox style="height: 196px; width: 25px;">

@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
     public SaveState saveStats = null;
     private static SaveManager instance;
     private string savePath;
+    public string playerName;
     [SerializeField] public GameObject [] towerTypes;
     public GameObject levelcontrol;
     

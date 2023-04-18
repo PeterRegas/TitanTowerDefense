@@ -9,6 +9,7 @@ public class LeaderboardController : MonoBehaviour
     public int memberID, score;
     public string  leaderboardKey;
 
+    private static LeaderboardController instance;
     UIDocument leaderboardDocument;
     [SerializeField] private UIDocument mainMenuDocument;
     private Button closeButton, leaderButton;
@@ -16,9 +17,21 @@ public class LeaderboardController : MonoBehaviour
     private Label [] leaderboardLabels = new Label[5];
     private Label [] leaderboardScores = new Label[5];
 
+    [SerializeField] private MainMenuController mainMenuController;
+    public string playerName;
+
+    private SaveManager saveManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        // if(instance == null)
+        // {
+        //     DontDestroyOnLoad(this);
+        //     instance = this;
+        // }
+
+        saveManager = FindObjectOfType<SaveManager>();
         leaderboardDocument = GetComponent<UIDocument>();
         var root = leaderboardDocument.rootVisualElement;
 
@@ -62,9 +75,9 @@ public class LeaderboardController : MonoBehaviour
     }
 
     [ContextMenu("Submit Score")]
-    public void SubmitScore()
+    public void SubmitScore(int score)
     {
-        LootLockerSDKManager.SubmitScore("1234", 55, leaderboardKey ,(response) =>
+        LootLockerSDKManager.SubmitScore(saveManager.playerName, score, leaderboardKey ,(response) =>
         {
             if (response.success)
             {
