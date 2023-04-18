@@ -25,11 +25,7 @@ public class LeaderboardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if(instance == null)
-        // {
-        //     DontDestroyOnLoad(this);
-        //     instance = this;
-        // }
+        DontDestroyOnLoad(this);
 
         saveManager = FindObjectOfType<SaveManager>();
         leaderboardDocument = GetComponent<UIDocument>();
