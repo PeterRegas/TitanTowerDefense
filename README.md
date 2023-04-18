@@ -60,7 +60,7 @@ Finally, `5 marks` will be allocated to the independent learning of a new game d
 - `1.0 marks` - Game state loading/saving ✓
 - `1.0 marks` - Menus and HUD ✓
 - `3.0 marks` - Trailer video
-- `5.0 marks` - Implementation of at least one additional concept, and slides describing one of these concepts
+- `5.0 marks` - Implementation of at least one additional concept, and slides describing one of these concepts ✓
 
 
 The subjective evaluation amounts to `18/40` marks.  Since it is expected that the objective marks will be close to 100%, these marks will target an average score of around 50% to (somewhat) compensate.  The best groups will receive full marks in one (or more) of these categories, and everybody else will get a mark reflective of their comparative score.  This will further be broken down into three categories:
