@@ -61,7 +61,7 @@ Finally, `5 marks` will be allocated to the independent learning of a new game d
 - `2.0 marks` - Enemies and enemy AI ✓
 - `1.0 marks` - Game state loading/saving ✓
 - `1.0 marks` - Menus and HUD ✓
-- `3.0 marks` - Trailer video
+- `3.0 marks` - Trailer video✓
 - `5.0 marks` - Implementation of at least one additional concept, and slides describing one of these concepts ✓
 
 
