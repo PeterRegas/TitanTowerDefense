@@ -7,7 +7,7 @@ You can work on this assignment alone or in a group of no more than 2 students.
 | Peter Regas | PeterRegas |
 | Jonathan Zhu | ImJonathanZ |
 
-Trailer video URL: https://www.youtube.com/watch?v=ojpckDCp1BM
+Trailer video URL: https://www.youtube.com/watch?v=GWPO7aeoGss
 
 Slides URL: https://docs.google.com/presentation/d/1UVag56ZrPXcUavKHQzpjLYNy8f3wdg4BfYNqh5vWNtA/edit?usp=sharing 
 
