@@ -14,11 +14,16 @@ public class PauseMenuController : MonoBehaviour
 
     [SerializeField] private BuyMenuController buyMenuController;
 
+    private LeaderboardManager leaderboardManager;
+    private LevelControls levelControls;
+
     private SaveManager saveManager;
 
     // Start is called before the first frame update
     void Awake()
     {
+        leaderboardManager = FindObjectOfType<LeaderboardManager>();
+        levelControls = FindObjectOfType<LevelControls>();
         saveManager = FindObjectOfType<SaveManager>();
         var root = pauseMenuDocument.rootVisualElement;
 
@@ -74,6 +79,8 @@ public class PauseMenuController : MonoBehaviour
     
     void quitButtonPressed(ClickEvent click)
     {
+        StartCoroutine(leaderboardManager.SubmitScore(saveManager.playerName, levelControls.roundNum));
+        Debug.Log("quit");
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
         isPaused = false;

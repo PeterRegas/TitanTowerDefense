@@ -16,12 +16,15 @@ public class EnemyMovement : MonoBehaviour {
     public float health = 100f;
     public float MaxHealth=100f;
 
+    private EnemySpawn enemySpawn;
+
     //[SerializeField] Animator animator = null;
     public int wayPointIndex = 1;
 
     [SerializeField] private Animator animator;
-    
+    public bool isDead = false;
     private void Start() {
+        enemySpawn = FindObjectOfType<EnemySpawn>();
         if (wayPointIndex==0) {
             wayPointIndex++;
         }
@@ -36,8 +39,11 @@ public class EnemyMovement : MonoBehaviour {
             agent.speed = 0;
             agent.tag = "dead";
             (agent.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
+            
             animator.SetTrigger("dying");
+            isDead = true;
             Destroy(gameObject, 3.5f);
+            
             return;
 
         }
@@ -54,18 +60,28 @@ public class EnemyMovement : MonoBehaviour {
             agent.speed = speed;
             animator.SetFloat("speed", agent.speed);
         }
+        
 
     }
     void OnTriggerEnter(Collider thing)
     {
         if(thing.tag == "Exit"){
             levelcontrol.GetComponent<LevelControls>().Lives-=1;
+            enemySpawn.totalDead++;
             Destroy(gameObject,0);
         }
         
     }
     void Update(){
         healthslideCanvas.GetComponent<Transform>().transform.LookAt(player);
+        
+        //Cheeky way to update dead number
+        if (isDead) {
+            enemySpawn.totalDead++;
+            enemySpawn = null;
+            health = 0.01f;
+            isDead = false;
+        }
     }
     
     

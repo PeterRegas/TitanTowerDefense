@@ -9,6 +9,7 @@ public class HUDController : MonoBehaviour
     private Label roundLabel;
     private Label moneyLabel;
     private Label healthLabel;
+    public VisualElement bottomNextRound;
 
     private LevelControls levelControls;
 
@@ -20,6 +21,8 @@ public class HUDController : MonoBehaviour
         roundLabel = root.Q<Label>("RoundLabel");
         moneyLabel = root.Q<Label>("CreditsLabel");
         healthLabel = root.Q<Label>("HealthLabel");
+        bottomNextRound = root.Q<VisualElement>("BottomNextRound");
+        bottomNextRound.style.display = DisplayStyle.None;
     }
 
     // Update is called once per frame
