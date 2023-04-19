@@ -31,6 +31,7 @@ public class MainMenuController : MonoBehaviour
         //All stuff in the main menu
         startButton = root.Q<Button>("StartButton");
         selectButton = root.Q<Button>("SelectLevelButton");
+        selectButton.style.display = DisplayStyle.None;
         quitButton = root.Q<Button>("QuitButton");
         loadButton = root.Q<Button>("LoadButton");
         
